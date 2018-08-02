@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /smartclass.solutions
+  RewriteCond $1 !^(index\.php|resources|robots\.txt)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
+  # Without mod_rewrite, route 404's to the front controller
+  #ErrorDocument 404 /index.php
+</IfModule>
+SetEnvIf Host localhost$ CI_ENV=development
+#SetEnvIf Host ci.cijagani.in$ CI_ENV=development
