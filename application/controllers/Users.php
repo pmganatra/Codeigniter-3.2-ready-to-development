@@ -11,13 +11,13 @@
 
       public function index($page = 1) {
           $users = Users::all();
-          d($users);
-          /*foreach ($users as $user) {
+          // d($users);
+          foreach ($users as $user) {
               echo '<li>' . $user->username . '</li>';
               echo '<li>' . $user->password . '</li>';
               echo '<li>' . $user->email . '</li>';
           }
-          echo '</ul>';*/
+          echo '</ul>';
       }
 
   }
